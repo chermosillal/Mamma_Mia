@@ -4,12 +4,3 @@
   padding: 2rem;
   text-align: center;
 }
-@font-face {
-  font-family: 'Quicksand';
-  src: url('fonts/Quicksand.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-body {
-  font-family: 'Quicksand', sans-serif;
-}
