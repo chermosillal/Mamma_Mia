@@ -52,11 +52,11 @@
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px; /* Tamaño uniforme */
+  width: 65px; /* Tamaño uniforme */
   height: 15px; /* Tamaño uniforme */
   border: 1px solid #ccc; /* Borde celeste */
   border-radius: 5%;
@@ -74,7 +74,6 @@
   justify-content: center;
   width: 140px; /* Tamaño uniforme */
   height: 20px; /* Tamaño uniforme */
-  border: 1px solid #00C8FF; /* Borde celeste */
   border-radius: 5%; /* Hace el borde completamente redondo */
   padding: 5px;
   white-space: nowrap;
@@ -148,7 +147,7 @@
     display: none;
     flex-direction: column;
     width: 100%;
-    background-color: #222;
+    background-color: #000;
     padding: 10px 0;
     text-align: center;
     align-items: center;

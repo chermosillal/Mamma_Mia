@@ -1,6 +1,10 @@
 .productos{
+    margin-top: 15px;
+    margin-bottom: 5px;
     width: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
