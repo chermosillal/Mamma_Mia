@@ -4,10 +4,11 @@ const CardPizza = (props) => {
   return (
       <div class="card">
           <img class="foto" src={props.img} alt={props.name} />
-          <div class="nombre"><h2 >Pizza {props.name}</h2></div>
+          <div class="nombre"><h2 >Pizza {props.name} <i class="fas fa-pizza-slice"></i></h2></div>
           <div class="linea"></div>
           <p class="tituloIngredientes">Ingredientes:</p>
-          <p class="ingredientes"> <i class="fas fa-pizza-slice"></i> {props.ingredients}</p>
+          <p class="ingredientes">🍕 {props.ingredients.join(", ")}
+</p>
           <div class="linea"></div>
           <p class="precio">Precio: $ {formatoMiles(props.price)}</p>
           <div className="botones">
