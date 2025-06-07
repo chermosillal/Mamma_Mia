@@ -20,7 +20,7 @@ const Navbar = () => {
           <li><a href="#">🔐 Login</a></li>
           <li><a href="#">🔐 Register</a></li>
         </ul>
-        </div>
+      </div>
       <div className="total">🛒 Total: $0.00</div>
     </nav>
   );
