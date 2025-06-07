@@ -1,6 +1,8 @@
-A continuacion se detallan los Commits por Hitos
+## A continuación se detallan los Commits por Hitos
 
---------------------- Hito 2 -------------------------
+***HITO1***
 Commits on Jun 7, 2025, Corresponde a la entrega del Hito 2
---------------------- Hito 1 -------------------------
+
+***HITO2***
 Hasta el Commits on Jun 1, 2025, corresponde al Hito1
+
