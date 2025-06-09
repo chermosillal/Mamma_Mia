@@ -84,6 +84,11 @@
   border-radius: 5%; /* Hace el borde completamente redondo */
   padding: 5px;
   white-space: nowrap;
+  background-color: #000;
+}
+.total:hover {
+  background-color: #000; 
+  color: goldenrod
 }
 /* --------------------------------------------------------- */
 
@@ -116,7 +121,8 @@
 
   .total {
     text-align: center;
-    width: 100%;
+    width: 50%;
+
   }
 }
 
