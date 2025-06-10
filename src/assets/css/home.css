@@ -1,12 +1,3 @@
-@font-face {
-    font-family: 'Quicksand';
-    src: url('fonts/Quicksand.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-body {
-    font-family: 'Quicksand', sans-serif;
-}
 .cabecera{
     width: 100%;
     height: 150px;
