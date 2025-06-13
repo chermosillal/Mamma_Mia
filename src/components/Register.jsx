@@ -51,38 +51,40 @@ const Register = () => {
   };
 
   return (
-    <div class="register">
-      <h2>Registro</h2>
-      <form class="form" onSubmit={handleSubmit}>
-        <div class="input-container">
-          <i class="fas fa-envelope"></i>
-          <input 
-            type="email" 
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div class="input-container">
-          <i class="fas fa-lock"></i>
-          <input 
-            type="password" 
-            placeholder="Contraseña"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div class="input-container">
-          <i class="fas fa-lock"></i>
-          <input 
-            type="password" 
-            placeholder="Confirmar Contraseña"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit">Enviar</button>
-      </form>
+    <div className="marco">
+      <div class="register">
+        <h2>Registro</h2>
+        <form class="form" onSubmit={handleSubmit}>
+          <div class="input-container">
+            <i class="fas fa-envelope"></i>
+            <input 
+              type="email" 
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div class="input-container">
+            <i class="fas fa-lock"></i>
+            <input 
+              type="password" 
+              placeholder="Contraseña"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div class="input-container">
+            <i class="fas fa-lock"></i>
+            <input 
+              type="password" 
+              placeholder="Confirmar Contraseña"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
     </div>
   )
 }

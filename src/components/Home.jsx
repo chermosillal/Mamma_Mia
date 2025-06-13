@@ -5,19 +5,21 @@ import { pizzas } from "../data/pizzas";
 
 const Home = () => {
   return (
-      <>
-      <Header/>
+  <>
+  <Header/>
+    <div className="marco">
       {pizzas.map((pizza, index) => (
-        <CardPizza 
-          // desc={pizza.desc}
-          key={pizza.id}
-          img={pizza.img}
-          name={pizza.name} 
-          price={pizza.price} 
-          ingredients={pizza.ingredients} 
-        />
+      <CardPizza 
+      // desc={pizza.desc}
+      key={pizza.id}
+      img={pizza.img}
+      name={pizza.name} 
+      price={pizza.price} 
+      ingredients={pizza.ingredients} 
+      />
       ))}
-      </>
+    </div>
+  </>
   )
 }
 

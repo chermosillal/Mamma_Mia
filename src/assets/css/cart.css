@@ -1,36 +1,10 @@
-/* Estilos compartidos para .login y .register */
-.login, .register {
+.lista{
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 250px;
-  margin-bottom: 20px;
-}
-
-.input-container {
-  position: relative;
   width: 100%;
 }
 
-.login input, .register input {
-  width: 100%;
-  padding: 10px;
-  padding-left: 35px; /* Espacio para el ícono */
-  margin-bottom: 10px;
-  box-sizing: border-box;
-}
-
-/* Estilos compartidos para iconos */
-.login i, .register i {
-  position: absolute;
-  left: 10px;
-  top: 40%;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: #666;
-}
-button {
-  width: 100%;
+.lista button{
+  width: 30px;
   padding: 10px;
   font-size: 16px;
   background-color: #007bff; /* Azul */
@@ -42,6 +16,36 @@ button {
 
 button:hover {
   background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left; /* Asegura que los textos estén alineados a la izquierda */
+}
+
+.cart-table td {
+  padding: 10px;
+  border: none; /* Elimina los bordes */
+}
+
+.cart-table td:nth-child(2) { /* Segunda columna (nombre) */
+  text-align: left; /* Alinea el texto a la izquierda */
+  width: 100%; /* Ocupa el espacio disponible */
+}
+
+.cart-table td:nth-child(5), /* Columna de cantidad */
+.total-container {
+  text-align: left;
+}
+.suma{
+  font-size: 24px;
+  font-weight:600;
+}
+
+.foto2 {
+  width: 50px;
+  height: auto;
 }
 
 /* -----------------------------------------------------------
