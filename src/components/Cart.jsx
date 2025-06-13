@@ -4,22 +4,21 @@ import "../assets/css/cart.css";
 
 const Cart = () => {
   // Filtrar los elementos de pizzas que están en pizzaCart y asignar cantidad inicial de 1
-  const initialCart = pizzaCart.map(cartItem => ({
-    ...pizzas.find(pizza => pizza.id === cartItem.id),
+    const initialCart = pizzaCart.map(cartItem => ({...pizzas.find(pizza => pizza.id === cartItem.id),
     count: 1, // Iniciar con cantidad 1
   }));
 
   const [cartItems, setCartItems] = useState(initialCart);
 
   // Función para incrementar cantidad
-  const handleIncrease = (id) => {
+  const incrementa = (id) => {
     setCartItems(cartItems.map(item => 
       item.id === id ? { ...item, count: item.count + 1 } : item
     ));
   };
 
   // Función para disminuir cantidad y eliminar si llega a 0
-  const handleDecrease = (id) => {
+  const reduce = (id) => {
     setCartItems(cartItems.map(item => 
       item.id === id ? { ...item, count: item.count - 1 } : item
     ).filter(item => item.count > 0)); // Filtramos para eliminar si llega a 0
@@ -31,6 +30,7 @@ const Cart = () => {
         <h2><i className="fas fa-shopping-cart"></i> Detalles del pedido</h2>
         {cartItems.length > 0 ? (
         <>
+          {/* para ordenar mejor los datos, usamos una tabla */}
           <table className="cart-table">
             <tbody>
               {cartItems.map(({ id, name, price, img, count }) => (
@@ -38,9 +38,9 @@ const Cart = () => {
                 <td><img className="foto2" src={img} alt={name} /></td>
                 <td>{name.toUpperCase()}</td>
                 <td>${price.toLocaleString("es-CL")}</td>
-                <td><button onClick={() => handleDecrease(id)}>-</button></td>
+                <td><button onClick={() => reduce(id)}>-</button></td>
                 <td className="cant">{count}</td>
-                <td><button onClick={() => handleIncrease(id)}>+</button></td>
+                <td><button onClick={() => incrementa(id)}>+</button></td>
               </tr>
               ))}
             </tbody>
