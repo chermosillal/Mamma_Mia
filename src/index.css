@@ -1,9 +1,9 @@
 @font-face {
-    font-family: 'Quicksand';
-    src: url('fonts/Quicksand.otf') format('opentype');
+    font-family: 'Sansita';
+    src: url(./assets/fonts/Sansita/Sansita-Regular.ttf) format('opentype');
     font-weight: normal;
-    font-style: normal;
+    font-style:;
 }
 body {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Sansita', sans-serif;
 }

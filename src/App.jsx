@@ -12,14 +12,12 @@ function App() {
       <Navbar/>
       <div className="main">
         <Home/>
-        <Register/>
-        <Login/>
+        {/* <Register/> */}
+        {/* <Login/> */}
       </div>
       <Footer/>
     </>
   )
 }
-
-
 
 export default App

@@ -2,25 +2,28 @@ import "../assets/css/card.css";
 
 const CardPizza = (props) => {
   return (
-      <div class="card">
-          <img class="foto" src={props.img} alt={props.name} />
-          <div class="nombre"><h2 >Pizza {props.name} <i class="fas fa-pizza-slice"></i></h2></div>
-          <div class="linea"></div>
-          <p class="tituloIngredientes">Ingredientes:</p>
-          <p class="ingredientes">🍕 {props.ingredients.join(", ")}
-</p>
-          <div class="linea"></div>
-          <p class="precio">Precio: $ {formatoMiles(props.price)}</p>
+      <div className="card">
+          <img className="foto" src={props.img} alt={props.name} />
+          <div className="nombre"><h2 >Pizza {props.name} <i className="fas fa-pizza-slice"></i></h2></div>
+          <div className="linea"></div>
+          <p className="tituloIngredientes">Ingredientes:</p>
+          <div className="listaIngredientes">
+            <ul className="ingredientes">
+              {Array.isArray(props.ingredients) ? (props.ingredients.map((ingredients, index) => (
+              <li key={index}>🍕{ingredients}</li>
+              ))
+              ) : (<li>Ingredientes no disponibles</li>)}
+            </ul>
+            {/* </p> */}
+          </div>
+          <div className="linea"></div>
+          <p className="precio">Precio: $ {props.price.toLocaleString("es-CL")}</p>
           <div className="botones">
-            <button class="btnVermas"><i class="fas fa-eye"></i> Ver más</button>
-            <button class="btnAdd"><i class="fas fa-shopping-cart"></i> Añadir</button>
+            <button className="btnVermas"><i className="fas fa-eye"></i> Ver más</button>
+            <button className="btnAdd"><i className="fas fa-shopping-cart"></i> Añadir</button>
           </div>
       </div>
   )
 }
 
 export default CardPizza
-
-function formatoMiles(numero) {
-    return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-}

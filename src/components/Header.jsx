@@ -1,8 +1,8 @@
 const Header = () => {
   return (
-    <div class="cabecera">
+    <div className="cabecera">
       <h1>!Pizzería Mamma Mia!</h1>
-      <p class="refran">¡Tenemos las mejores pizzas que podrás encontrar!</p>
+      <p className="refran">¡Tenemos las mejores pizzas que podrás encontrar!</p>
     </div>
   )
 }
