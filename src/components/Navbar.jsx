@@ -1,4 +1,5 @@
 import "../assets/css/navbar.css";
+import { Link } from 'react-router-dom'
 
 const toggleMenu = () => {
   const menuLinks = document.querySelector(".nav-links");
@@ -7,30 +8,30 @@ const toggleMenu = () => {
 
 const Navbar = () => {
   const total = 25000;
-  const token = false;
-  //const token = true;
+ //const token = false;
+  const token = true;
   return (
     <nav className="navbar">
       <div className="nav-container">
         <h1 className="title">Pizzeria Mamma Mia</h1>
         <button className="hamburger" onClick={toggleMenu}>☰</button>
         <ul className="nav-links">
-          <li><a href="#">🍕 Home</a></li>
+          <li><a href="/">🍕 Home</a></li>
           {token ? (
             <>
-              <li><a href="#">🔓 Profile</a></li>
-              <li><a href="#">🔒 Logout</a></li>
+              <li><a href="/profile">🔓 Profile</a></li>
+              <li><a href="/logout">🔒 Logout</a></li>
             </>
           ) : (
             <>
-              <li><a href="#">🔐 Login</a></li>
-              <li><a href="#">🔐 Register</a></li>
+              <li><a href="/login">🔐 Login</a></li>
+              <li><a href="/register">🔐 Register</a></li>
             </>
           )}
         </ul>
       </div>
-      <button className="total">🛒 Total: ${total.toLocaleString("es-CL")}</button>
-      {/* <div className="total">🛒 Total: ${total.toLocaleString("es-CL")}</div> */}
+      
+      <Link to="/cart"><button className="total">🛒 Total: ${total.toLocaleString("es-CL")}</button></Link>
     </nav>
   );
 };

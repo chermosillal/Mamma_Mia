@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 // import CardPizza from "./CardPizza"
-import Header from "./Header"
+import Header from "../components/Header"
 import "../assets/css/home.css";
-import CardPizzaUnica from "./CardPizzaUnica";
+import CardPizzaUnica from "../components/CardPizzaUnica";
 // import { pizzas } from "../data/pizzas";
 
 const Pizza = () => {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import CardPizza from "./CardPizza"
-import Header from "./Header"
+import CardPizza from "../components/CardPizza"
+import Header from "../components/Header"
 import "../assets/css/home.css";
 import { pizzas } from "../data/pizzas";
 
