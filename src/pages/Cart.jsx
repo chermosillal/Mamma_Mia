@@ -1,69 +1,54 @@
-import React, { useState } from "react";
-import { pizzas, pizzaCart } from "../data/pizzas";
+import React from "react";
 import "../assets/css/cart.css";
+import { useCart } from "../context/CartContext"; // ✅ Consumimos el contexto
 
 const Cart = () => {
-  // Filtrar los elementos de pizzas que están en pizzaCart y asignar cantidad inicial de 1
-    const initialCart = pizzaCart.map(cartItem => ({...pizzas.find(pizza => pizza.id === cartItem.id),
-    count: 1, // Iniciar con cantidad 1
-  }));
-
-  const [cartItems, setCartItems] = useState(initialCart);
-
-  // Función para incrementar cantidad
-  const incrementa = (id) => {
-    setCartItems(cartItems.map(item => 
-      item.id === id ? { ...item, count: item.count + 1 } : item
-    ));
-  };
-
-  // Función para disminuir cantidad y eliminar si llega a 0
-  const reduce = (id) => {
-    setCartItems(cartItems.map(item => 
-      item.id === id ? { ...item, count: item.count - 1 } : item
-    ).filter(item => item.count > 0)); // Filtramos para eliminar si llega a 0
-  };
+  const { cartItems, increment, reduce, total } = useCart(); // ✅ Accedemos a funciones y datos del carrito
 
   return (
     <div className="marco">
-      <div className="card">
+      <div className="cart">
         <h2><i className="fas fa-shopping-cart"></i> Detalles del pedido</h2>
+
         {cartItems.length > 0 ? (
-        <>
-          {/* para ordenar mejor los datos, usamos una tabla */}
-          <table className="cart-table">
-            <tbody>
-              {cartItems.map(({ id, name, price, img, count }) => (
-              <tr key={id}>
-                <td><img className="foto2" src={img} alt={name} /></td>
-                <td>{name.toUpperCase()}</td>
-                <td>${price.toLocaleString("es-CL")}</td>
-                <td><button onClick={() => reduce(id)}>-</button></td>
-                <td className="cant">{count}</td>
-                <td><button onClick={() => incrementa(id)}>+</button></td>
-              </tr>
-              ))}
-            </tbody>
-          </table>
+          <>
+            <table className="cart-table">
+              <tbody>
+                {cartItems.map(({ id, name, price, img, count }) => (
+                  <tr key={id}>
+                    <td><img className="foto2" src={img} alt={name} /></td>
+                    <td>{name.toUpperCase()}</td>
+                    <td>${price.toLocaleString("es-CL")}</td>
+                    <td>
+                      <button onClick={() => reduce(id)}>-</button>
+                    </td>
+                    <td className="cant">{count}</td>
+                    <td>
+                      <button onClick={() => increment(id)}>+</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
 
-          {/* Totalización fuera de la tabla */}
-          <div className="total-container">
-            {/* <p><strong>Total cantidad:</strong> {cartItems.reduce((acc, item) => acc + item.count, 0)}</p> */}
-            <p className="suma">
-              Total: {cartItems.reduce((acc, item) => acc + item.price * item.count, 0)
-                .toLocaleString("es-CL", { style: "currency", currency: "CLP" })}
-            </p>
-          </div>
+            <div className="total-container">
+              <p className="suma">
+                Total: {total.toLocaleString("es-CL", {
+                  style: "currency",
+                  currency: "CLP"
+                })}
+              </p>
+            </div>
 
-          {/* Botón pagar */}
-          <button className="pay-button">Pagar</button>
-        </>
-          ) : (
+            <button className="pay-button">Pagar</button>
+          </>
+        ) : (
           <p>El carrito está vacío.</p>
-          )}
+        )}
       </div>
     </div>
-      );
-    };
+  );
+};
 
 export default Cart;
+

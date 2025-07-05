@@ -1,5 +1,7 @@
+// Navbar.jsx
 import "../assets/css/navbar.css";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext'; // 👈 Importa el contexto
 
 const toggleMenu = () => {
   const menuLinks = document.querySelector(".nav-links");
@@ -7,34 +9,39 @@ const toggleMenu = () => {
 };
 
 const Navbar = () => {
-  const total = 25000;
- //const token = false;
-  const token = true;
+  const { total } = useCart(); // 👈 Obtiene el total desde el contexto
+  const token = true; // Simulación de sesión
+
   return (
     <nav className="navbar">
       <div className="nav-container">
         <h1 className="title">Pizzeria Mamma Mia</h1>
         <button className="hamburger" onClick={toggleMenu}>☰</button>
         <ul className="nav-links">
-          <li><a href="/">🍕 Home</a></li>
+          <li><Link to="/">🍕 Home</Link></li>
           {token ? (
             <>
-              <li><a href="/profile">🔓 Profile</a></li>
-              <li><a href="/logout">🔒 Logout</a></li>
+              <li><Link to="/profile">🔓 Profile</Link></li>
+              <li><Link to="/logout">🔒 Logout</Link></li>
             </>
           ) : (
             <>
-              <li><a href="/login">🔐 Login</a></li>
-              <li><a href="/register">🔐 Register</a></li>
+              <li><Link to="/login">🔐 Login</Link></li>
+              <li><Link to="/register">🔐 Register</Link></li>
             </>
           )}
         </ul>
       </div>
-      
-      <Link to="/cart"><button className="total">🛒 Total: ${total.toLocaleString("es-CL")}</button></Link>
+
+      <Link to="/cart">
+        <button className="total">
+          🛒 Total: {total.toLocaleString("es-CL", { style: "currency", currency: "CLP" })}
+        </button>
+      </Link>
     </nav>
   );
 };
 
 export default Navbar;
+
 

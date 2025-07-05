@@ -1,33 +1,31 @@
-import { useEffect, useState } from "react";
-// import CardPizza from "./CardPizza"
-import Header from "../components/Header"
+import { useParams } from "react-router-dom";
+import Header from "../components/Header";
 import "../assets/css/home.css";
-import CardPizzaUnica from "../components/CardPizzaUnica";
-// import { pizzas } from "../data/pizzas";
+import CardPizza from "../components/CardPizza"; // ✅ Usamos el componente correcto
+import { usePizzas } from "../context/PizzaContext";
 
 const Pizza = () => {
-  const [pizza, setPizza] = useState(null);
-  useEffect(() => {
-    fetch("http://localhost:5000/api/pizzas/p001")
-      .then((response) => response.json())
-      .then((data) => setPizza(data))  // Ahora `data` es un solo objeto
-  }, []);
+  const { id } = useParams();
+  const { getPizzaById, loading } = usePizzas();
+  const pizza = getPizzaById(id);
 
-return (
+  return (
     <>
       <Header />
       <div className="marco">
-        {pizza ? (
-          <CardPizzaUnica
+        {loading ? (
+          <p>Cargando pizza...</p>
+        ) : pizza ? (
+          <CardPizza
             key={pizza.id}
+            id={pizza.id}
             img={pizza.img}
-            name={pizza.name} 
-            price={pizza.price} 
+            name={pizza.name}
+            price={pizza.price}
             ingredients={pizza.ingredients}
-            desc={pizza.desc} 
           />
         ) : (
-          <p>Cargando pizza...</p>
+          <p>Pizza no encontrada.</p>
         )}
       </div>
     </>
@@ -35,6 +33,3 @@ return (
 };
 
 export default Pizza;
-
-
-

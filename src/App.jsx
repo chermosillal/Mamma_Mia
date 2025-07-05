@@ -21,13 +21,13 @@ function App() {
       {/* <Login/> */}
       {/* <Cart/> */}
       <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/logout" element={<Logout />} />
-
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<Logout />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/pizza/p001" element={<Pizza />} />
+        {/* <Route path="/pizza/p001" element={<Pizza />} /> */}
+        <Route path="/pizza/:id" element={<Pizza />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="*" element={<NotFound/>} />
       </Routes>
