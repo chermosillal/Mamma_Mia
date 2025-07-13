@@ -1,5 +1,8 @@
 ## A continuación se detallan los Commits por Hitos
 
+***HITO7***
+Hasta el Commits on Jul 13, 2025, corresponde al Hito7
+
 ***HITO6***
 Hasta el Commits on Jul 06, 2025, corresponde al Hito6
 
